@@ -1,11 +1,6 @@
 const { Schema, Types: { ObjectId } } = require('mongoose');
 
 module.exports = new Schema({
-    fullname: {
-        type: String,
-        required: true
-    },
-
     email: {
         type: String,
         required: true,
@@ -24,7 +19,7 @@ module.exports = new Schema({
 
     authenticated: { type: Date },
 
-    dog: [{
+    ownerOf: [{
         type: ObjectId,
         ref: 'Dog'
     }]
