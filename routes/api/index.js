@@ -2,15 +2,16 @@ const { Router } = require('express')
 const jwtParser = require('../../middlewares/jwt-parser');
 
 const {
-
-} = require('./handlers/index')
+    handleAuthenticateUser,
+    handleRegisterDog
+} = require('./handlers')
 
 const router = new Router()
 
 const withErrorHandling = require('./helpers/handle-error')
 
-// register user
-router.post('/api/users', withErrorHandling(handleRegisterUser))
+// register dog
+router.post('/api/users', withErrorHandling(handleRegisterDog))
 
 // authenticate user
 router.post('/api/users/auth', withErrorHandling(handleAuthenticateUser))

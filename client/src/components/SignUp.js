@@ -1,4 +1,21 @@
-import { Container, CssBaseline, Avatar, Typography, TextField, FormControlLabel, Checkbox, Button, Grid, Link, Box } from '@material-ui/core';
+import {
+    Container,
+    CssBaseline,
+    Avatar,
+    Typography,
+    TextField,
+    Button,
+    Grid,
+    Link,
+    Box,
+    FormControl,
+    InputLabel,
+    Select,
+    FormLabel,
+    Radio,
+    RadioGroup,
+    FormControlLabel
+} from '@material-ui/core';
 import PetsIcon from '@material-ui/icons/Pets';
 import Copyright from '../utils/copyright';
 
@@ -23,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
     submit: {
         margin: theme.spacing(3, 0, 2),
-    },
+    }
 }));
 
 export default function SignUp({ onSignUp }) {
@@ -34,7 +51,13 @@ export default function SignUp({ onSignUp }) {
 
         const signUpData = {
             email: event.target.email.value,
-            password: event.target.password.value
+            password: event.target.password.value,
+            nameDog: event.target.name.value,
+            breed: event.target.breed.value,
+            age: event.target.age.value,
+            character: event.target.character.value,
+            size: event.target.size.value,
+            gender: event.target.gender.value
         }
         console.log(signUpData);
 
@@ -48,62 +71,145 @@ export default function SignUp({ onSignUp }) {
                     <PetsIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Registro de tu mascota
+                    Registro
                 </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="E-mail"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                    />
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Contraseña"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                    />
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        name="name"
-                        label="Nombre mascota"
-                        type="text"
-                        id="name"
-                    />
-                    <TextField
-                        variant="outlined"
-                        margin="normal"
-                        required
-                        name="breed"
-                        label="Raza"
-                        type="text"
-                        id="raza"
-                    />
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                    >
-                        Accede
-                    </Button>
-                    <Grid container>
-                        <Grid item>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="email"
+                                label="E-mail"
+                                name="email"
+                                autoComplete="email"
+                                autoFocus
+                            />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="password"
+                                label="Contraseña"
+                                type="password"
+                                id="password"
+                                autoComplete="current-password"
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="name"
+                                label="Nombre mascota"
+                                type="text"
+                                id="name"
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="breed"
+                                label="Raza"
+                                type="text"
+                                id="raza"
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl variant="outlined" fullWidth>
+                                <InputLabel htmlFor="age">Edad</InputLabel>
+                                <Select
+                                    native
+                                    label="Edad"
+                                    name="age"
+                                    inputProps={{
+                                        name: 'age',
+                                        id: 'age',
+                                    }}
+                                >
+                                    <option aria-label="None" value="" />
+                                    <option value="cachorro">Cachorro</option>
+                                    <option value="joven">Joven</option>
+                                    <option value="adulto">Adulto</option>
+                                    <option value="senior">Senior</option>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <FormControl variant="outlined" fullWidth>
+                                <InputLabel htmlFor="character">Personalidad</InputLabel>
+                                <Select
+                                    native
+                                    label="Personalidad"
+                                    name="character"
+                                    inputProps={{
+                                        name: 'character',
+                                        id: 'character',
+                                    }}
+                                >
+                                    <option aria-label="None" value="" />
+                                    <option value="asustadizo">Asustadizo</option>
+                                    <option value="sociable">Sociable</option>
+                                    <option value="reactivo">Reactivo</option>
+                                    <option value="tímido">Tímido</option>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={5}>
+                            <FormControl variant="outlined" fullWidth>
+                                <InputLabel htmlFor="size">Tamaño</InputLabel>
+                                <Select
+                                    native
+                                    label="Tamaño"
+                                    inputProps={{
+                                        name: 'size',
+                                        id: 'size',
+                                    }}
+                                >
+                                    <option aria-label="None" value="" />
+                                    <option value="pequeño">Pequeño</option>
+                                    <option value="mediano">Mediano</option>
+                                    <option value="grande">Grande</option>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} sm={7}>
+                            <FormControl component="fieldset" >
+                                <FormLabel component="legend">Género</FormLabel>
+                                <RadioGroup aria-label="gender" name="gender" row>
+                                    <FormControlLabel value="female" control={<Radio />} label="Hembra" />
+                                    <FormControlLabel value="male" control={<Radio />} label="Macho" />
+                                </RadioGroup>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}
+                            >
+                                Confirmar
+                            </Button>
+                        </Grid>
+                        <Grid item xs={12}>
                             <Link to='/sign-in' variant="body2" component={RouterLink}>
-                                {"Ya tienes cuenta? Accede"}
+                                <Typography component="div">
+                                    <Box textAlign="right">
+                                        Ya tienes cuenta? Accede
+                                    </Box>
+                                </Typography>
                             </Link>
                         </Grid>
                     </Grid>

@@ -1,7 +1,7 @@
 const { Schema, Types: { ObjectId } } = require('mongoose');
 
 module.exports = new Schema({
-    name: {
+    nameDog: {
         type: String,
         required: true
     },

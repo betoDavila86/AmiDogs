@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './App.css';
 
-import { Header, Gallery, Hero, Footer, SignIn } from './components';
+import { Header, Gallery, Hero, Footer, SignIn, SignUp } from './components';
 
 import { withRouter, Switch, Route } from 'react-router-dom';
 
@@ -15,6 +15,7 @@ function App({ history }) {
       <CssBaseline />
       <Switch>
         <Route path="/sign-in" render={() => <SignIn />} />
+        <Route path="/sign-up" render={() => <SignUp />} />
         <Route exact path="/" render={() => {
           return (
             <Fragment>
