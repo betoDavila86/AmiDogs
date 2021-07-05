@@ -9,8 +9,9 @@ module.exports = (req, res, next) => {
 
         const { sub: userId } = jwt.verify(token, JWT_SECRET)
 
-        req.userId = userId
-        next()
+        req.userId = userId;
+        
+        next();
     } catch (error) {
         res.status(401).json({ error: error.message })
     }

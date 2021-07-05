@@ -1,5 +1,5 @@
-const authenticateUser = require('../../../logic');
- 
+const { authenticateUser } = require('../../../logic');
+
 module.exports = (req, res, handleError) => {
     try {
         const { body: { email, password } } = req

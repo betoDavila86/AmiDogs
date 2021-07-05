@@ -1,5 +1,5 @@
-const registerDog = require('../../../logic');
- 
+const { registerDog } = require('../../../logic');
+
 module.exports = (req, res, handleError) => {
     try {
         const { body: { email, password, nameDog, breed, age, size, character, gender } } = req

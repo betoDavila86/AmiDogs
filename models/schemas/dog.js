@@ -60,6 +60,13 @@ module.exports = new Schema({
             type: ObjectId,
             ref: 'Dog'
         }
+    ],
+
+    comments: [
+        {
+            type: ObjectId,
+            ref: 'Comment'
+        }
     ]
 
 })
