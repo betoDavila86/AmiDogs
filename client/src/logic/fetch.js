@@ -17,8 +17,8 @@ export default {
             const { status } = response;
 
             if (status === 201) {
-                const { msg } = await response.json();
-                return msg;
+                await response.json();
+                return;
             };
 
             if (status >= 400 && status < 500) {

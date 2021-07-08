@@ -59,7 +59,7 @@ export default function SignUp({ onSignUp }) {
             size: event.target.size.value,
             gender: event.target.gender.value
         }
-        console.log(signUpData);
+        onSignUp(signUpData);
 
     }
 
@@ -187,8 +187,8 @@ export default function SignUp({ onSignUp }) {
                             <FormControl component="fieldset" >
                                 <FormLabel component="legend">Género</FormLabel>
                                 <RadioGroup aria-label="gender" name="gender" row>
-                                    <FormControlLabel value="female" control={<Radio />} label="Hembra" />
-                                    <FormControlLabel value="male" control={<Radio />} label="Macho" />
+                                    <FormControlLabel value="hembra" control={<Radio />} label="Hembra" />
+                                    <FormControlLabel value="macho" control={<Radio />} label="Macho" />
                                 </RadioGroup>
                             </FormControl>
                         </Grid>

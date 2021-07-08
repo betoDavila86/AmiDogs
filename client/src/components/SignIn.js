@@ -36,9 +36,8 @@ export default function SignIn({ onSignIn }) {
             email: event.target.email.value,
             password: event.target.password.value
         }
-        console.log(signInData);
 
-        // onSignIn(signInData)
+        onSignIn(signInData)
 
     }
 

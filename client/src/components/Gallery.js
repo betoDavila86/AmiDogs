@@ -1,5 +1,6 @@
 import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import silueta from '../assets/img/perro-silueta.png'
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -22,29 +23,28 @@ const useStyles = makeStyles((theme) => ({
 const Gallery = ({ dogs, onViewDog }) => {
     const classes = useStyles();
 
-    const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     return (
         <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
-                {cards.map((card) => (
-                    <Grid item key={card} xs={12} sm={6} md={4}>
+                {dogs && dogs.length && dogs.map(dog => (
+                    <Grid item key={dog.id} xs={12} sm={6} md={4}>
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image="https://source.unsplash.com/random"
-                                title="Nombre perro"
+                                image={silueta}
+                                title={dog.nameDog}
                             />
                             <CardContent className={classes.cardContent}>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    Nombre
+                                    {dog.nameDog}
                                 </Typography>
-                                <Typography>
-                                    Descripción de nuestro amigo de cuatro patas.
+                                <Typography component="p">
+                                    {dog.breed}
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" color="primary" onClick={onViewDog}>
-                                    Ver más
+                                <Button size="small" color="primary" onClick={() => onViewDog(dog.id)}>
+                                    Ver
                                 </Button>
                             </CardActions>
                         </Card>

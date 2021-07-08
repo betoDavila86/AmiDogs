@@ -4,6 +4,9 @@ import Gallery from './Gallery';
 import Footer from './Footer';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Card from './Card';
+import Modal from './Modal';
+import Spinner from './Spinner';
 
 export {
     Header,
@@ -11,5 +14,8 @@ export {
     Gallery,
     Footer,
     SignIn,
-    SignUp
+    SignUp,
+    Card,
+    Modal,
+    Spinner,
 }

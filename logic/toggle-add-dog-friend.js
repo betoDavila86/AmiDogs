@@ -1,6 +1,6 @@
 const validations = require('../routes/api/helpers/validations');
 const { User, Dog } = require('../models');
-const { NotAllowedError, NotFoundError } = require('poopinion-errors');
+const { NotAllowedError, NotFoundError } = require('../utils/custom-errors');
 
 module.exports = (userId, dogFriendId) => {
     validations.string(userId, 'ID del dueño')

@@ -1,5 +1,5 @@
 module.exports = {
-    registerDog: require('./register'),
+    registerUser: require('./register-user'),
     authenticateUser: require('./authentication'),
     retrieveAllDogs: require('./retrieve-all-dogs'),
     retrieveDog: require('./retrieve-dog'),
@@ -7,4 +7,8 @@ module.exports = {
     retrieveDogPicture: require('./retrieve-dog-picture'),
     toggleAddDogFriend: require('./toggle-add-dog-friend'),
     createComment: require('./create-comment'),
+    retrieveMyPets: require('./retrieve-my-pets'),
+    registerPetBasicInfo: require('./register-pet-basic-info'),
+    addPetToOwner: require('./add-pet-to-owner'),
+    updateDogInfo: require('./update-dog-info'),
 }

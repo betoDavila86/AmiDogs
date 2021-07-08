@@ -12,18 +12,19 @@ module.exports = new Schema({
     },
 
     age: {
+        type: String,
         enum: ['cachorro', 'joven', 'adulto', 'senior'],
-        required: true,
+        required: true
     },
 
     gender: {
+        type: String,
         enum: ['macho', 'hembra'],
         required: true
     },
 
     image: {
-        type: String,
-        required: true
+        type: String
     },
 
     walkLocation: {
@@ -36,18 +37,19 @@ module.exports = new Schema({
     },
 
     character: {
+        type: String,
         enum: ['asustadizo', 'sociable', 'reactivo', 'tímido'],
         required: true
     },
 
     size: {
+        type: String,
         enum: ['pequeño', 'mediano', 'grande'],
         required: true
     },
 
     description: {
-        type: String,
-        required: true
+        type: String
     },
 
     owner: {
